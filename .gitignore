@@ -1,0 +1,8 @@
+# .gitignore
+
+# Archivos que no se deben incluir en el repositorio
+
+node_modules/
+
+# Archivo JSON con las dependencias de npm
+package-lock.json
