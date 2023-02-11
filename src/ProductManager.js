@@ -74,26 +74,26 @@ class ProductManager {
 
 }
 
-const productManager = new ProductManager('./products.json');
-console.log(productManager.getProducts()); // []
+// const productManager = new ProductManager('./products.json');
+// console.log(productManager.getProducts()); // []
 
-productManager.addProduct({
-  title: 'producto prueba',
-  description: 'Este es un producto prueba',
-  price: 200,
-  thumbnail: 'Sin imagen',
-  code: 'abc123',
-  stock: 25
-});
+// productManager.addProduct({
+//   title: 'producto prueba',
+//   description: 'Este es un producto prueba',
+//   price: 200,
+//   thumbnail: 'Sin imagen',
+//   code: 'abc123',
+//   stock: 25
+// });
 
-console.log(productManager.getProducts()); 
+// console.log(productManager.getProducts()); 
 
-const product = productManager.getProduct(1);
-console.log(product); 
+// const product = productManager.getProduct(1);
+// console.log(product); 
 
-productManager.updateProduct(1, {
-  title: 'producto actualizado'
-});
+// productManager.updateProduct(1, {
+//   title: 'producto actualizado'
+// });
 
 const updatedProduct = productManager.getProduct(1);
 console.log(updatedProduct);
