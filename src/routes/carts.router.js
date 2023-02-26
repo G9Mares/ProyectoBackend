@@ -2,11 +2,12 @@ const Router = require('express').Router
 
 const router = Router()
 const CartManager = require('../carts/CartManager')
-const cartManager = new CartManager('./carts/carts.json')
+const cartManager = new CartManager('./src/carts/carts.json')
 
 
 router.get('/:cid', async (req, res) => {
     const cart = await cartManager.getCart(parseInt(req.params.cid));
+    res.setHeader('Content-Type','application/json')
     if (!cart) {
       res.status(404).send({ error: 'cart not found' });
     } else {
@@ -17,6 +18,7 @@ router.get('/:cid', async (req, res) => {
 router.post('/',async (req,res)=>{
     let cart = req.body
     const params_correcto = 'productId//quantity'
+    res.setHeader('Content-Type','application/json')
     if (!cart.products || !Array.isArray(cart.products)) {
         return res.status(404).send(
             {error:'Se debe enviar los productos en forma de lista con productId:"", quantity:""'}

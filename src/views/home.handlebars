@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Productos</title>
+  </head>
+  <body>
+    <h1>Listado de productos</h1>
+    <ul>
+      {{#each products}}
+        <li>El producto {{this.title}} tiene un precio de ${{this.price}} pesos, y hay {{this.stock}} unidades en stock</li>
+      {{/each}}
+    </ul>
+  </body>
+</html>

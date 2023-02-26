@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Real-time Products</title>
+  </head>
+  <body>
+    <h1>Real-time Products</h1>
+    <ul id="productList"></ul>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      const socket = io();
+
+      // Función para actualizar la lista de productos en la vista
+      function updateProducts(products) {
+        const productList = document.getElementById('productList');
+        productList.innerHTML = '';
+        products.forEach((product) => {
+          const li = document.createElement('li');
+          li.textContent = `${product.title} - ${product.price}`;
+          productList.appendChild(li);
+        });
+      }
+
+      // Conectarse al servidor de WebSocket y actualizar la lista de productos cuando se recibe el evento 'products'
+      socket.on('products', (products) => {
+        updateProducts(products);
+      });
+    </script>
+  </body>
+</html>

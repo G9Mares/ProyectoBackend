@@ -1,14 +1,18 @@
 {
   "name": "proyectobackend",
+  "type": "commonjs",
   "version": "1.0.0",
   "description": "Proyecto de Backend coderhouse",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./src/app.js"
   },
   "author": "GMares",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.7",
+    "socket.io": "^4.6.1"
   }
 }
